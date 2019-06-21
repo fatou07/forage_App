@@ -55,7 +55,11 @@
 </button> --}}
 
 <!-- Modal -->
+
 <div class="modal fade" id="modal_delete_client" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+  <form method="POST" action="" id="form_delete_client">
+    @csrf
+    @method('DELETE')
   <div class="modal-dialog" role="document">
     <div class="modal-content">
       <div class="modal-header">
@@ -77,10 +81,11 @@
       </div> --}}
       <div class="modal-footer">
         <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
-        <button type="button" class="btn btn-primary">Supprimer</button>
+        <button type="submit" class="btn btn-primary">Supprimer</button>
       </div>
     </div>
   </div>
+</form>
 </div>
       @endsection
 
@@ -123,7 +128,10 @@
                  
           });
           $("#table-clients").off('click','.btn-delete-client').on('click','.btn-delete-client',function(){
+            var href=$(this).data('href');
+                  
                   $('#modal_delete_client').modal();
+                  
                 }); 
       });
      
