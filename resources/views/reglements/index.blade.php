@@ -69,9 +69,9 @@
                     { data: 'id', name: 'id' },
                     { data: 'date', name: 'date' },
                     { data: 'montant', name: 'montant' },
-                    { data: 'types_id', name: 'types_id' },
+                    { data: 'type.name', name: 'type.name' },
                     { data: 'factures_id', name: 'factures_id' },
-                    { data: 'comptables_id', name: 'comptables_id' },
+                    { data: 'comptable.matricule', name: 'comptable.matricule' },
                     { data: null ,orderable: false, searchable: false}
 
                 ],

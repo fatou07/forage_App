@@ -9,8 +9,8 @@ class ConsommationController extends Controller
 {
     public function list(Abonnement $abonnement=null)
     {
-       if ( $abonnement=null){
-           $consommations=Consommation::get()->load('compteur.abonnement.client.user');
+       if ( $abonnement==null){
+           $consommations=\App\Consommation::get()->load('compteur.abonnement.client.user');
        
         return Datatables::of($consommations)->make(true);
     }else{

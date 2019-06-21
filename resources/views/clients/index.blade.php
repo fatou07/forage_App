@@ -129,6 +129,7 @@
           });
           $("#table-clients").off('click','.btn-delete-client').on('click','.btn-delete-client',function(){
             var href=$(this).data('href');
+            $("#form-delete-client").attr("action",href);
                   
                   $('#modal_delete_client').modal();
                   

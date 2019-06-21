@@ -10,7 +10,7 @@ class ReglementController extends Controller
 {
     public function list(Request $request)
     {
-        $reglements=Reglement::get();
+        $reglements=Reglement::get()->load('type','comptable');
         return Datatables::of($reglements)->make(true);
     }
     /**
@@ -20,7 +20,9 @@ class ReglementController extends Controller
      */
     public function index()
     {
-        return view('reglements.index');
+        $reglements=Reglement::get()->paginate(10);
+      
+        return view('reglements.index',compact('reglements'));
     }
 
     /**
@@ -30,9 +32,7 @@ class ReglementController extends Controller
      */
     public function create(Request $request)
     {
-        $village_id=$request->input('villages');
-        $village=\App\Village::find($village_id);
-        return view('reglements.create',compact('village'));
+    return view('reglements.create');
     }
 
     /**
@@ -43,7 +43,11 @@ class ReglementController extends Controller
      */
     public function store(Request $request)
     {
-        //
+        $validateData = $request->validate([
+            'facture_id' => 'required',
+            'montant' => 'required|numeric',
+            'comptable' => 'required',
+        ]);
     }
 
     /**
