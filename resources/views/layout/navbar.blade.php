@@ -1,79 +1,64 @@
-  <!-- Navbar -->
-  <nav class="navbar navbar-expand-lg navbar-absolute navbar-transparent">
-      <div class="container-fluid">
-        <div class="navbar-wrapper">
-          <div class="navbar-toggle d-inline">
-            <button type="button" class="navbar-toggler">
-              <span class="navbar-toggler-bar bar1"></span>
-              <span class="navbar-toggler-bar bar2"></span>
-              <span class="navbar-toggler-bar bar3"></span>
+<nav class="navbar navbar-expand-lg navbar-transparent navbar-absolute fixed-top ">
+    <div class="container-fluid">
+      <div class="navbar-wrapper">
+        <a class="navbar-brand" href="#pablo">Dashboard</a>
+      </div>
+      <button class="navbar-toggler" type="button" data-toggle="collapse" aria-controls="navigation-index" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="sr-only">Toggle navigation</span>
+        <span class="navbar-toggler-icon icon-bar"></span>
+        <span class="navbar-toggler-icon icon-bar"></span>
+        <span class="navbar-toggler-icon icon-bar"></span>
+      </button>
+      <div class="collapse navbar-collapse justify-content-end">
+        <form class="navbar-form">
+          <div class="input-group no-border">
+            <input type="text" value="" class="form-control" placeholder="Search...">
+            <button type="submit" class="btn btn-white btn-round btn-just-icon">
+              <i class="material-icons">search</i>
+              <div class="ripple-container"></div>
             </button>
           </div>
-          <a class="navbar-brand" href="javascript:void(0)">HOME</a>
-        </div>
-        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navigation" aria-expanded="false" aria-label="Toggle navigation">
-          <span class="navbar-toggler-bar navbar-kebab"></span>
-          <span class="navbar-toggler-bar navbar-kebab"></span>
-          <span class="navbar-toggler-bar navbar-kebab"></span>
-        </button>
-        <div class="collapse navbar-collapse" id="navigation">
-          <ul class="navbar-nav ml-auto">
-            <li class="search-bar input-group">
-              <button class="btn btn-link" id="search-button" data-toggle="modal" data-target="#searchModal"><i class="tim-icons icon-zoom-split"></i>
-                <span class="d-lg-none d-md-block">Search</span>
-              </button>
-            </li>
-            <li class="dropdown nav-item">
-              <a href="javascript:void(0)" class="dropdown-toggle nav-link" data-toggle="dropdown">
-                <div class="notification d-none d-lg-block d-xl-block"></div>
-                <i class="tim-icons icon-sound-wave"></i>
-                <p class="d-lg-none">
-                  Notifications
-                </p>
-              </a>
-              <ul class="dropdown-menu dropdown-menu-right dropdown-navbar">
-                <li class="nav-link">
-                  <a href="#" class="nav-item dropdown-item">Mike John responded to your email</a>
-                </li>
-                <li class="nav-link">
-                  <a href="javascript:void(0)" class="nav-item dropdown-item">You have 5 more tasks</a>
-                </li>
-                <li class="nav-link">
-                  <a href="javascript:void(0)" class="nav-item dropdown-item">Your friend Michael is in town</a>
-                </li>
-                <li class="nav-link">
-                  <a href="javascript:void(0)" class="nav-item dropdown-item">Another notification</a>
-                </li>
-                <li class="nav-link">
-                  <a href="javascript:void(0)" class="nav-item dropdown-item">Another one</a>
-                </li>
-              </ul>
-            </li>
-            <li class="dropdown nav-item">
-              <a href="#" class="dropdown-toggle nav-link" data-toggle="dropdown">
-                <div class="photo">
-                  <img src="../assets/img/anime3.png" alt="Profile Photo">
-                </div>
-                <b class="caret d-none d-lg-block d-xl-block"></b>
-                <p class="d-lg-none">
-                  Log out
-                </p>
-              </a>
-              <ul class="dropdown-menu dropdown-navbar">
-                <li class="nav-link">
-                  <a href="javascript:void(0)" class="nav-item dropdown-item">Profile</a>
-                </li>
-                <li class="nav-link">
-                  <a href="javascript:void(0)" class="nav-item dropdown-item">Settings</a>
-                </li>
-                <li class="dropdown-divider"></li>
-                <li class="nav-link">
-                  <a href="javascript:void(0)" class="nav-item dropdown-item">Log out</a>
-                </li>
-              </ul>
-            </li>
-            <li class="separator d-lg-none"></li>
-          </ul>
-        </div>
+        </form>
+        <ul class="navbar-nav">
+          <li class="nav-item">
+            <a class="nav-link" href="#pablo">
+              <i class="material-icons">dashboard</i>
+              <p class="d-lg-none d-md-block">
+                Stats
+              </p>
+            </a>
+          </li>
+          <li class="nav-item dropdown">
+            <a class="nav-link" href="http://example.com" id="navbarDropdownMenuLink" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+              <i class="material-icons">notifications</i>
+              <span class="notification">5</span>
+              <p class="d-lg-none d-md-block">
+                Some Actions
+              </p>
+            </a>
+            <div class="dropdown-menu dropdown-menu-right" aria-labelledby="navbarDropdownMenuLink">
+              <a class="dropdown-item" href="#">Mike John responded to your email</a>
+              <a class="dropdown-item" href="#">You have 5 new tasks</a>
+              <a class="dropdown-item" href="#">You're now friend with Andrew</a>
+              <a class="dropdown-item" href="#">Another Notification</a>
+              <a class="dropdown-item" href="#">Another One</a>
+            </div>
+          </li>
+          <li class="nav-item dropdown">
+            <a class="nav-link" href="#pablo" id="navbarDropdownProfile" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+              <i class="material-icons">person</i>
+              <p class="d-lg-none d-md-block">
+                Account
+              </p>
+            </a>
+            <div class="dropdown-menu dropdown-menu-right" aria-labelledby="navbarDropdownProfile">
+              <a class="dropdown-item" href="#">Profile</a>
+              <a class="dropdown-item" href="#">Settings</a>
+              <div class="dropdown-divider"></div>
+              <a class="dropdown-item" href="#">Log out</a>
+            </div>
+          </li>
+        </ul>
       </div>
-    </nav>
+    </div>
+  </nav>

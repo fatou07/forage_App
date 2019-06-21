@@ -1,74 +1,112 @@
-@extends("layout.index")
-@section("content")
+@extends('layout.default')
+@section('content')
 <div class="content">
-    <div class="row">
-      <div class="col-12">
-<form>
-  <div class="form-group">
-    <label for="text">nom</label> 
-    <div class="input-group">
-      <div class="input-group-prepend">
-        <div class="input-group-text">
-          <i class="fa fa-address-card"></i>
+    <div class="container-fluid">
+        <div class="card">
+            <div class="card-header card-header-primary">
+                <h3 class="card-title">Inscription</h3>
+                <p class="card-category">Nouvelle Utilisateur
+                    {{-- <a target="_blank" href="#">Robert McIntosh</a>. Please checkout the --}}
+                    {{-- <a href="#" target="_blank">full documentation.</a> --}}
+                </p>
+            </div>
+            <div class="card-body">
+                <div class="row pt-5"></div>
+                
+                <form method="POST" action="{{route('clients.store')}}">
+                    {{ csrf_field() }}
+                    <div class="form-group">
+                        <label for="input-nom">Nom</label>
+                        <input type="text" name="nom" class="form-control" id="input-nom" aria-describedby="emailHelp" placeholder="Nom du client">
+                        <small id="input-nom-help" class="form-text text-muted">
+                            @if ($errors->has('nom'))
+                            <div class="alert alert-danger">
+                                <ul>
+                                    @foreach ($errors->get('nom') as $message)
+                                    <li>{{ $message }}</li>
+                                    @endforeach
+                                </ul>
+                            </div>
+                            @endif
+                        </small>
+                    </div>
+                    <div class="form-group">
+                      <label for="input-nom">Prenom</label>
+                      <input type="text" name="nom" class="form-control" id="input-nom" aria-describedby="emailHelp" placeholder="prenom du client">
+                      <small id="input-nom-help" class="form-text text-muted">
+                          @if ($errors->has('nom'))
+                          <div class="alert alert-danger">
+                              <ul>
+                                  @foreach ($errors->get('nom') as $message)
+                                  <li>{{ $message }}</li>
+                                  @endforeach
+                              </ul>
+                          </div>
+                          @endif
+                      </small>
+                  </div>
+                  <div class="form-group">
+                    <label for="input-nom">numero de telephone</label>
+                    <input type="number" name="nom" class="form-control" id="input-prenom" aria-describedby="emailHelp" placeholder="Numero de telephone du client">
+                    <small id="input-prenom-help" class="form-text text-muted">
+                        @if ($errors->has('nom'))
+                        <div class="alert alert-danger">
+                            <ul>
+                                @foreach ($errors->get('nom') as $message)
+                                <li>{{ $message }}</li>
+                                @endforeach
+                            </ul>
+                        </div>
+                        @endif
+                    </small>
+                </div>
+                    <div class="form-group">
+                        <label for="exampleInputEmail1">Email address</label>
+                        <input type="email" name="email" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" placeholder="Enter email">
+                        <small id="emailHelp" class="form-text text-muted">
+                            @if ($errors->has('email'))
+                            @foreach ($errors->get('email') as $message)
+                            <p class="text-danger">{{ $message }}</p>
+                            @endforeach
+                            @endif
+                        </small>
+                    </div>
+                    <div class="form-group">
+                        <label for="exampleInputPassword1">Password</label>
+                        <input type="password" name="password" class="form-control" id="exampleInputPassword1" placeholder="Password">
+                        @if ($errors->has('password'))
+                        @foreach ($errors->get('password') as $message)
+                        <p class="text-danger">{{ $message }}</p>
+                        @endforeach
+                        @endif
+                    </div>
+                    <div class="form-check">
+                        <label class="form-check-label">
+                            <input class="form-check-input" type="checkbox" value="">
+                            Option one is this
+                            <span class="form-check-sign">
+                                <span class="check"></span>
+                            </span>
+                        </label>
+                    </div>
+                    
+                    <button type="submit" class="btn btn-primary">S'inscrire</button>
+                    <button type="submit" class="btn btn-primary">Connection</button>
+                </form>
+                <div class="row justify-content-center">
+                    @if ($errors->any())
+                  
+                    <div class="alert alert-danger">
+                        <ul>
+                            @foreach ($errors->all() as $error)
+                            <li>{{ $error }}</li>
+                            @endforeach
+                        </ul>
+                    </div>
+                    @endif
+                </div>
+            </div>
         </div>
-      </div> 
-      <input id="text" name="text" placeholder="nom d'utilisateur" type="text" class="form-control">
     </div>
-  </div>
-  <div class="form-group">
-    <label for="text">prenom</label> 
-    <input id="text" name="text" placeholder="votre prenom" type="text" class="form-control">
-  </div>
-  <div class="form-group">
-    <label for="text2">e-mail</label> 
-    <input id="text2" name="text2" placeholder="nom@prenom.com" type="text" class="form-control">
-  </div>
-  <div class="form-group">
-    <label for="text">password</label> 
-    <input id="text" name="text" placeholder="votre mot de passe" type="text" aria-describedby="textHelpBlock" class="form-control"> 
-    <span id="textHelpBlock" class="form-text text-muted">mettez un mot de passe alphanumérique!!</span>
-  </div>
-  <div class="form-group">
-    <label for="village">village</label> 
-    <div>
-      <select id="village" name="village" class="custom-select">
-        <option value="fouta">Fouta</option>
-        <option value="Ngay">Ngay</option>
-        <option value="Guereo">Guereo</option>
-        <option value="Diolof">diolof</option>
-      </select>
-    </div>
-  </div>
-  <div class="form-group">
-    <label for="textarea">evaluer Sen Forage</label> 
-    <textarea id="textarea" name="textarea" cols="40" rows="5" class="form-control"></textarea>
-  </div>
-  <div class="form-group">
-    <label>veuillez renseigner votre rôles !!!</label> 
-    <div>
-      <div class="custom-control custom-checkbox custom-control-inline">
-        <input name="checkbox" id="checkbox_0" type="checkbox" class="custom-control-input" value="client" checked="checked"> 
-        <label for="checkbox_0" class="custom-control-label">client</label>
-      </div>
-      <div class="custom-control custom-checkbox custom-control-inline">
-        <input name="checkbox" id="checkbox_1" type="checkbox" class="custom-control-input" value="gestionnaire"> 
-        <label for="checkbox_1" class="custom-control-label">gestionnaire</label>
-      </div>
-      <div class="custom-control custom-checkbox custom-control-inline">
-        <input name="checkbox" id="checkbox_2" type="checkbox" class="custom-control-input" value="comptable"> 
-        <label for="checkbox_2" class="custom-control-label">comptable</label>
-      </div>
-      <div class="custom-control custom-checkbox custom-control-inline">
-        <input name="checkbox" id="checkbox_3" type="checkbox" class="custom-control-input" value="contrôleur"> 
-        <label for="checkbox_3" class="custom-control-label">contrôleur</label>
-      </div>
-    </div>
-  </div> 
-  <div class="form-group">
-    <button name="submit" type="submit" class="btn btn-primary">soumettre la demande</button>
-  </div>
-</form>
-</div>
-</div>
 </div>
 @endsection
