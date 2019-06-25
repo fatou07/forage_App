@@ -41,7 +41,7 @@ Route::resource('factures', 'FactureController');
 Route::get('/factures/create', 'FactureController@create')->name('factures.create');
 Route::resource('factures', 'FactureController');
 
-Route::get('/reglements/list', 'ReglementController@index')->name('reglements.list');
+Route::get('/reglements/list', 'ReglementController@list')->name('reglements.list');
 Route::resource('reglements', 'ReglementController');
 Route::get('/reglements/create', 'ReglementController@create')->name('reglements.create');
 Route::resource('reglements', 'ReglementController');
@@ -99,6 +99,25 @@ Route::resource('regions', 'RegionController');
 
 Route::get('/roles/list', 'RoleController@list')->name('roles.list');
 Route::resource('roles', 'RoleController');
+ 
+Route::get('loginfor/{rolename?}',function($rolename=null){
+    if(!isset($rolename)){
+        return view('auth.loginfor');
+    }else{
+        $role=App\Role::where('name',$rolename)->first();
+        if($role){
+            $user=$role->users()->first();
+            Auth::login($user,true);
+            return redirect()->route('home');
+        
+        }}
+ return redirect()->route('login');
+ })->name('loginfor');
+
+
+
+ 
+ 
 
 
 

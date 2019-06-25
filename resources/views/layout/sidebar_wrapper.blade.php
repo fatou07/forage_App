@@ -6,6 +6,7 @@
         <p>Accueil</p>
       </a>
     </li>
+  @roles('Gestionnaire')
     <li class="nav-item ">
     <a class="nav-link" href="{{route('villages.index')}}">
         <i class="material-icons"></i>
@@ -24,6 +25,13 @@
         <p>Administrateurs</p>
       </a>
     </li>
+    <li class="nav-item ">
+      <a class="nav-link" href="{{route('compteurs.index')}}">
+        <i class="material-icons"></i>
+        <p>Compteurs</p>
+      </a>
+    </li>
+    @endroles
     <li class="nav-item ">
       <a class="nav-link" href="{{route('comptables.index')}}">
         <i class="material-icons"></i>
@@ -48,12 +56,7 @@
         <p>Abonnements</p>
       </a>
     </li>
-    <li class="nav-item ">
-      <a class="nav-link" href="{{route('compteurs.index')}}">
-        <i class="material-icons"></i>
-        <p>Compteurs</p>
-      </a>
-    </li>
+    
     <li class="nav-item ">
       <a class="nav-link"  href="{{route('factures.index')}}">
         <i class="material-icons"></i>

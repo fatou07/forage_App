@@ -64,6 +64,10 @@ class User extends Eloquent
 	public function hasrole($rolename){
 		return $this->role->name == $rolename;
 	}
+	
+	public function hasAnyRoles($roles){
+		return in_array($this->role->name, $roles);
+	}
 
 	public function role()
 	{

@@ -8,7 +8,7 @@
             <div class="col-md-12">
               <div class="card">
                 <div class="card-header card-header-primary">
-                  <h4 class="card-title ">SENFORAGE</h4>
+                  <h4 class="card-title ">SEN FORAGE</h4>
                   <p class="card-category"> consommations
                       <a href="{{route('consommations.index')}}"><div class="btn btn-warning">Nouvelle consommation <i class="material-icons">add</i></div></a> 
                   </p>
