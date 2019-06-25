@@ -20,7 +20,7 @@ class ClientController extends Controller
      */
     public function index()
     {
-        //
+        
         return view('clients.index');
     }
 
@@ -73,12 +73,17 @@ class ClientController extends Controller
      * @param  \App\Client  $client
      * @return \Illuminate\Http\Response
      */
-    public function edit(Client $client)
+    public function edit($id)
     {
-        //
+        $client = Client::find($id);
+        $user =$client->user;
+        //return $user;
+        
+        return view('clients.update', compact('client','user','id')); 
+        
     }
 
-    /**
+    /**        
      * Update the specified resource in storage.
      *
      * @param  \Illuminate\Http\Request  $request
@@ -88,6 +93,9 @@ class ClientController extends Controller
     public function update(Request $request, Client $client)
     {
         //
+        $client->update();
+        $message = "modifier" .$client->user->name.' '.$client->user->firstname. 'effectuer avec succes';
+        return redirect()->route('clients.index')->with(compact('message')); 
     }
 
     /**
@@ -98,6 +106,8 @@ class ClientController extends Controller
      */
     public function destroy(Client $client)
     {
-        //
+        $client->delete();
+        $message = "suppression" .$client->user->name.' '.$client->user->firstname. 'effectuer avec succes';
+        return redirect()->route('clients.index')->with(compact('message'));
     }
 }

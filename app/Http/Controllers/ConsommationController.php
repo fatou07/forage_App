@@ -4,6 +4,8 @@ namespace App\Http\Controllers;
 
 use App\Consommation;
 use Illuminate\Http\Request;
+use Yajra\Datatables\Datatables;
+
 
 class ConsommationController extends Controller
 {

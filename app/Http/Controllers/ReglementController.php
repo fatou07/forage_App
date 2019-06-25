@@ -10,8 +10,8 @@ class ReglementController extends Controller
 {
     public function list(Request $request)
     {
-        $reglements=Reglement::get()->load('type','comptable');
-        return Datatables::of($reglements)->make(true);
+        $reglement=Reglement::get()->load('type','comptable');
+        return Datatables::of($reglement)->make(true);
     }
     /**
      * Display a listing of the resource.
@@ -20,9 +20,10 @@ class ReglementController extends Controller
      */
     public function index()
     {
-        $reglements=Reglement::get()->paginate(10);
+       // $reglements=Reglement::get()->paginate(10);
       
-        return view('reglements.index',compact('reglements'));
+        return view('reglements.index');
+       // ,compact('reglements'));
     }
 
     /**
@@ -43,7 +44,7 @@ class ReglementController extends Controller
      */
     public function store(Request $request)
     {
-        $validateData = $request->validate([
+        $this-> $request->validate([
             'facture_id' => 'required',
             'montant' => 'required|numeric',
             'comptable' => 'required',
@@ -58,7 +59,7 @@ class ReglementController extends Controller
      */
     public function show(Reglement $reglement)
     {
-        //
+        
     }
 
     /**

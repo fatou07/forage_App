@@ -22,6 +22,9 @@
                           ID
                         </th>
                         <th>
+                          uuid
+                        </th>
+                        <th>
                           Date 
                         </th>
                         <th>
@@ -67,11 +70,12 @@
             "ajax": "{{route('reglements.list')}}",
             columns: [
                     { data: 'id', name: 'id' },
+                    { data: 'uuid', name: 'uuid' },
                     { data: 'date', name: 'date' },
                     { data: 'montant', name: 'montant' },
-                    { data: 'type.name', name: 'type.name' },
+                    { data: 'types_id', name: 'types_id' },
                     { data: 'factures_id', name: 'factures_id' },
-                    { data: 'comptable.matricule', name: 'comptable.matricule' },
+                    { data: 'comptables_id', name: 'comptables_id' },
                     { data: null ,orderable: false, searchable: false}
 
                 ],
@@ -84,7 +88,7 @@
                         return '<a href='+url_e+'  class=" btn btn-primary " ><i class="material-icons">edit</i></a>'+
                         '<a class="btn btn-danger" href='+url_d+'><i class="material-icons">delete</i></a>';
                         },
-                        "targets": 6
+                        "targets": 7
                         },
                     // {
                     //     "data": null,

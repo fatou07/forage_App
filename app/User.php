@@ -61,6 +61,9 @@ class User extends Eloquent
 		'password',
 		'roles_id'
 	];
+	public function hasrole($rolename){
+		return $this->role->name == $rolename;
+	}
 
 	public function role()
 	{
