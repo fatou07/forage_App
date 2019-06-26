@@ -1,12 +1,12 @@
 <div class="sidebar-wrapper">
   <ul class="nav">
     <li class="nav-item active  ">
-      <a class="nav-link" href="layout.index">
+      <a class="nav-link" href="">
         <i class="material-icons"></i>
         <p>Accueil</p>
       </a>
     </li>
-  @roles('Gestionnaire')
+     @roles('Gestionnaire')
     <li class="nav-item ">
     <a class="nav-link" href="{{route('villages.index')}}">
         <i class="material-icons"></i>
@@ -31,7 +31,8 @@
         <p>Compteurs</p>
       </a>
     </li>
-    @endroles
+   @endroles
+   @roles('Administrateur')
     <li class="nav-item ">
       <a class="nav-link" href="{{route('comptables.index')}}">
         <i class="material-icons"></i>
@@ -50,6 +51,8 @@
         <p>Gestionnaires</p>
       </a>
     </li>
+    @endroles
+    @roles('Agents')
     <li class="nav-item ">
       <a class="nav-link" href="{{route('abonnements.index')}}">
         <i class="material-icons"></i>
@@ -81,6 +84,7 @@
         <p>Reglements</p>
       </a>
     </li>
+    @endroles
     <li class="nav-item ">
       <a class="nav-link"href="{{route('arrondissements.index')}}">
         <i class="material-icons"></i>

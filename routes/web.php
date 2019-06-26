@@ -15,8 +15,15 @@ Route::get('/', function () {
     return view('welcome');
 });
 
-Route::get('/test', function () {
-    return view('layout.form');
+Route::get('/accueil', function () {
+    return view('accueil.index');
+});
+Route::get('/', function () {
+    return view('layout.default');
+});
+
+Route::get('/login', function () {
+    return view('auth.passwords.login');
 });
 Route::get('/test1', function () {
     return "HELLO";
@@ -27,6 +34,9 @@ Route::get('/clients/selectvillage', function () {
 return view('clients.selectvillage');})->name('clients.selectvillage');
 
 Route::get('/home', 'HomeController@index')->name('home');
+
+/* Route::get('/accueil', 'HomeController@index')->name('accueil.index'); */
+
 
 Route::get('/clients/list', 'ClientController@list')->name('clients.list');
 Route::resource('clients', 'ClientController');

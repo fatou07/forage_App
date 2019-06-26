@@ -1,7 +1,7 @@
 <nav class="navbar navbar-expand-lg navbar-transparent navbar-absolute fixed-top ">
     <div class="container-fluid">
       <div class="navbar-wrapper">
-        <a class="navbar-brand" href="#pablo">Dashboard</a>
+        <a class="navbar-brand" href="#pablo">SEN FORAGE</a>
       </div>
       <button class="navbar-toggler" type="button" data-toggle="collapse" aria-controls="navigation-index" aria-expanded="false" aria-label="Toggle navigation">
         <span class="sr-only">Toggle navigation</span>
@@ -22,7 +22,7 @@
         <ul class="navbar-nav">
           <li class="nav-item">
             <a class="nav-link" href="#pablo">
-              <i class="material-icons">dashboard</i>
+              <i class="material-icons"></i>
               <p class="d-lg-none d-md-block">
                 Stats
               </p>
@@ -55,7 +55,7 @@
               <a class="dropdown-item" href="#">Profile</a>
               <a class="dropdown-item" href="#">Settings</a>
               <div class="dropdown-divider"></div>
-              <a class="dropdown-item" href="#">Log out</a>
+              <a class="dropdown-item" href="/laravelApp/public/login">Log out</a>
             </div>
           </li>
         </ul>
