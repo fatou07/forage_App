@@ -3,7 +3,7 @@
 
 <head>
   <meta charset="utf-8" />
-  <link rel="apple-touch-icon" sizes="76x76" href="../assets/img/apple-icon.png">
+  <link rel="apple-touch-icon" sizes="76x76" href="{{asset('assets/img/apple-icon.png')}}">
   <link rel="icon" type="image/png" href="../assets/img/favicon.png">
   <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1" />
   <title>
@@ -118,7 +118,7 @@
                   <div class="ct-chart" id="dailySalesChart"></div>
                 </div>
                 <div class="card-body">
-                  <h4 class="card-title">Daily Sales</h4>
+                  <h4 class="card-title">Consommations</h4>
                   <p class="card-category">
                     <span class="text-success"><i class="fa fa-long-arrow-up"></i> 55% </span> increase in today sales.</p>
                 </div>
@@ -135,7 +135,7 @@
                   <div class="ct-chart" id="websiteViewsChart"></div>
                 </div>
                 <div class="card-body">
-                  <h4 class="card-title">Email Subscriptions</h4>
+                  <h4 class="card-title">Clients</h4>
                   <p class="card-category">Last Campaign Performance</p>
                 </div>
                 <div class="card-footer">
@@ -151,7 +151,7 @@
                   <div class="ct-chart" id="completedTasksChart"></div>
                 </div>
                 <div class="card-body">
-                  <h4 class="card-title">Completed Tasks</h4>
+                  <h4 class="card-title">Factures</h4>
                   <p class="card-category">Last Campaign Performance</p>
                 </div>
                 <div class="card-footer">
@@ -413,8 +413,8 @@
             <div class="col-lg-6 col-md-12">
               <div class="card">
                 <div class="card-header card-header-warning">
-                  <h4 class="card-title">Employees Stats</h4>
-                  <p class="card-category">New employees on 15th September, 2016</p>
+                  <h4 class="card-title">Statistiques des clients</h4>
+                  <p class="card-category">nouveau client du 29 juin, 2019</p>
                 </div>
                 <div class="card-body table-responsive">
                   <table class="table table-hover">
@@ -427,7 +427,7 @@
                     <tbody>
                       <tr>
                         <td>1</td>
-                        <td>Dakota Rice</td>
+                        <td>fatou ndoye</td>
                         <td>$36,738</td>
                         <td>Niger</td>
                       </tr>

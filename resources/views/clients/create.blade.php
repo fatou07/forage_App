@@ -1,5 +1,6 @@
 @extends('layout.default')
 @section('content')
+
 <div class="content">
     <div class="container-fluid">
         <div class="card">
@@ -23,6 +24,21 @@
                             <div class="alert alert-danger">
                                 <ul>
                                     @foreach ($errors->get('nom') as $message)
+                                    <li>{{ $message }}</li>
+                                    @endforeach
+                                </ul>
+                            </div>
+                            @endif
+                        </small>
+                    </div>
+                    <div class="form-group">
+                        <label for="input-prenom">prenom</label>
+                        <input type="text" name="prenom" class="form-control" id="input-prenom" aria-describedby="prenomHelp" placeholder="prenom du client">
+                        <small id="input-prenom-help" class="form-text text-muted">
+                            @if ($errors->has('prenom'))
+                            <div class="alert alert-danger">
+                                <ul>
+                                    @foreach ($errors->get('prenom') as $message)
                                     <li>{{ $message }}</li>
                                     @endforeach
                                 </ul>
@@ -78,4 +94,13 @@
         </div>
     </div>
 </div>
+<?php if (isset($_POST['submit'])){
+    $nom=$_POST['Nom'];
+    $prenom=$_POST['Prenom'];
+    $email=$_POST['Email'];
+    $client= new Client($nom,$prenom,$email);
+    $client->save();
+    header("Location:clients.index");
+  }
+  ?>
 @endsection

@@ -15,7 +15,7 @@
       <div class="cover-container d-flex w-100 h-100 p-3 mx-auto flex-column">
           <header class="masthead mb-auto">
             <div class="inner">
-              <h3 class="masthead-brand">SENFORAGE</h3>
+              <h3 class="masthead-brand">SEN FORAGE</h3>
               <nav class="nav nav-masthead justify-content-center">
                 <!-- <a class="nav-link active" href="#">Home</a>
                 <a class="nav-link" href="#">Features</a>
@@ -25,7 +25,7 @@
           </header>
 
           <main role="main" class="inner cover">
-            <h1 class="cover-heading">TEST DES ROLES</h1>
+            <h1 class="cover-heading">Veuillez Choisir un Role</h1>
             <p class="lead">Interface de redirection vers un role de l'application avec un utilisateur par defaut</p>
             <p class="lead">
               <!-- <a href="#" class="btn btn-lg btn-secondary">Learn more</a>
@@ -37,7 +37,7 @@
                 <div class="btn-group" role="group">
                   <button id="dropdownId" type="button" class="btn dropdown-toggle  btn-lg btn-primary" data-toggle="dropdown" aria-haspopup="true"
                       aria-expanded="false">
-                    Choisir le role svp
+            veuillez choisir un role svp
                   </button>
                   <div class="dropdown-menu" aria-labelledby="dropdownId">
                   <a href="{{route('loginfor','Administrateur')}}" class="btn btn-lg btn-secondary">Administrateur</a>

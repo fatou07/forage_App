@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use App\Consommation;
+use App\Abonnement;
 use Illuminate\Http\Request;
 use Yajra\Datatables\Datatables;
 
@@ -12,7 +13,7 @@ class ConsommationController extends Controller
     public function list(Abonnement $abonnement=null)
     {
        if ( $abonnement==null){
-           $consommations=\App\Consommation::get()->load('compteur.abonnement.client.user');
+           $consommations=\App\Consommation::get()->load('compteur.abonnement.client.user')->get();
        
         return Datatables::of($consommations)->make(true);
     }else{

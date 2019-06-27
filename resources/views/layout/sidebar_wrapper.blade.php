@@ -1,12 +1,12 @@
 <div class="sidebar-wrapper">
   <ul class="nav">
     <li class="nav-item active  ">
-      <a class="nav-link" href="">
+    <a class="nav-link" href="{{('/laravelApp/public/accueil')}}">
         <i class="material-icons"></i>
         <p>Accueil</p>
       </a>
     </li>
-     @roles('Gestionnaire')
+     @roles('Gestionnaire|Administrateur')
     <li class="nav-item ">
     <a class="nav-link" href="{{route('villages.index')}}">
         <i class="material-icons"></i>
@@ -32,7 +32,7 @@
       </a>
     </li>
    @endroles
-   @roles('Administrateur')
+   @roles('Administrateur|Agent')
     <li class="nav-item ">
       <a class="nav-link" href="{{route('comptables.index')}}">
         <i class="material-icons"></i>
@@ -84,7 +84,7 @@
         <p>Reglements</p>
       </a>
     </li>
-    @endroles
+   @endroles 
     <li class="nav-item ">
       <a class="nav-link"href="{{route('arrondissements.index')}}">
         <i class="material-icons"></i>

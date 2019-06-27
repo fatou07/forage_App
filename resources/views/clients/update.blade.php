@@ -17,16 +17,33 @@
                     {{ csrf_field() }}
                     <div class="form-group">
                         <label for="input-nom">Nom</label>
-                        <input type="text" name="nom" class="form-control" id="input-nom" aria-describedby="emailHelp" value="nom">
+                        <input type="text" name="nom" class="form-control" id="input-nom" aria-describedby="emailHelp"  placeholder="votre nom" value={{"$user->name"}}>
                         <small id="input-nom-help" class="form-text text-muted">
                             @if ($errors->has('nom'))
                             <div class="alert alert-danger">
                                 <ul>
                                     @foreach ($errors->get('nom') as $message)
+                                   {{--  <p class="text-danger">{{ $message }}</p> --}}
                                     <li>{{ $message }}</li>
                                     @endforeach
                                 </ul>
                             </div>
+                            @endif
+                        </small>
+                    </div>
+                    <div class="form-group">
+                        <label for="input-nom">prenom</label>
+                        <input type="text" name="prenom" class="form-control" id="input-nom" aria-describedby="emailHelp"   value={{"$user->firstname"}}>
+                        <small id="input-nom-help" class="form-text text-muted">
+                            @if ($errors->has('nom'))
+                             <div class="alert alert-danger">
+                                <ul> 
+                                    @foreach ($errors->get('nom') as $message)
+                                  {{--   <p class="text-danger">{{ $message }}</p> --}}
+                                    <li>{{ $message }}</li> 
+                                    @endforeach
+                              </ul>
+                            </div> 
                             @endif
                         </small>
                     </div>

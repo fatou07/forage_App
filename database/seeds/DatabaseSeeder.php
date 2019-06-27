@@ -20,9 +20,9 @@ class DatabaseSeeder extends Seeder
         $this->call(TypesTableSeeder::class);
         $this->call(ClientsTableSeeder::class);
         $this->call(ConsommationsTableSeeder::class);
-        $this->call(RolesTableSeeder::class);
-        $this->call(CompteursTableSeeder::class);
+       /*  $this->call(RolesTableSeeder::class);
+        $this->call(CompteursTableSeeder::class); 
         $this->call(FacturesTableSeeder::class);
-
+ */
     }
 }

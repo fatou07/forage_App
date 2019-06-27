@@ -13,14 +13,11 @@ class CheckRoles
      * @param  \Closure  $next
      * @return mixed
      */
-    public function handle($request, Closure $next)
-    {
-        return $next($request);
-    }
+   
     public function handle($request, Closure $next, $roles)
     {
         $rolesArray= explode("|",$roles);
-        if (! $request->user()->hasAnyRoles($roleArray)) {
+        if (! $request->user()->hasAnyRoles($rolesArray)) {
             return redirect()->route('home')->with(['permission'=>"Action non autorisée"]);
         }
 

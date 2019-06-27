@@ -32,12 +32,7 @@
                         <th>
                           email
                           </th>
-                          <th>
-                         password
-                            </th>
-                            <th>
-                                role
-                                   </th>
+                         
                             <th>
                                 Action
                                    </th>
@@ -58,6 +53,70 @@
           </div>
         </div>
       </div>
+      
+<div class="modal fade" id="modal_delete_user" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+  <form method="POST" action="" id="form_delete_user">
+    @csrf
+    @method('DELETE')
+  <div class="modal-dialog" role="document">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title" id="">etes-vous  sur de supprimer</h5>
+        
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+          <span aria-hidden="true">&times;</span>
+        </button>
+      </div>
+      <div class="modal-header">
+        <h5 class="modal-title" id="">appuyer sur close pour annuler</h5>
+        
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+          <span aria-hidden="true">&times;</span>
+        </button>
+      </div>
+      {{-- <div class="modal-body">
+        ...
+      </div> --}}
+      <div class="modal-footer">
+        <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+        <button type="submit" class="btn btn-primary">Supprimer</button>
+      </div>
+    </div>
+  </div>
+</form>
+</div>
+{{-- // modifier --}}
+<div class="modal fade" id="modal_update_user" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+  <form method="POST" action="" id="form_update_user">
+    @csrf
+    @method('EDIT')
+  <div class="modal-dialog" role="document">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title" id="">voulez-vous modifier</h5>
+        
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+          <span aria-hidden="true">&times;</span>
+        </button>
+      </div>
+      <div class="modal-header">
+        <h5 class="modal-title" id="">appuyer sur close pour annuler</h5>
+        
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+          <span aria-hidden="true">&times;</span>
+        </button>
+      </div>
+      {{-- <div class="modal-body">
+        ...
+      </div> --}}
+      <div class="modal-footer">
+        <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+        <button type="submit" class="btn btn-primary">Modifier</button>
+      </div>
+    </div>
+  </div>
+</form>
+</div>
       @endsection
 
       @push('scripts')
@@ -72,8 +131,7 @@
                     { data: 'name', name: 'name' },
                     { data: 'telephone', name: 'telephone' },
                     { data: 'email', name: 'email' },
-                    { data: 'password', name: 'password' },
-                    { data: 'roles_id', name: 'roles_id' },
+                  
                     { data: null ,orderable: false, searchable: false}
 
                 ],
@@ -84,9 +142,10 @@
                         url_e =  "{!! route('users.edit',':id')!!}".replace(':id', data.id);
                         url_d =  "{!! route('users.destroy',':id')!!}".replace(':id', data.id);
                         return '<a href='+url_e+'  class=" btn btn-primary " ><i class="material-icons">edit</i></a>'+
-                        '<a class="btn btn-danger" href='+url_d+'><i class="material-icons">delete</i></a>';
+                        '<div class="btn btn-danger  put btn-delete-user" title="supprimer" data-href='+url_d+'><i class="material-icons">delete</i></div>';
+                        '<div class="btn btn-danger  put btn-edit-user" title="Modifier" data-href='+url_d+'><i class="material-icons">edit</i></div>';
                         },
-                        "targets": 7
+                        "targets": 5
                         },
                     // {
                     //     "data": null,
@@ -97,6 +156,19 @@
                     //     "targets": 1
                     // }
                 ],
+                $("#table-users").off('click','.btn-delete-user').on('click','.btn-delete-user',function(){
+            var href=$(this).data('href');
+            $("#form_delete_user").attr("action",href);
+                  
+                  $('#modal_delete_user').modal();
+                });
+                  
+                  $("#table-users").off('click','.btn-edit-user').on('click','.btn-edit-user',function(){
+            var href=$(this).data('href');
+            $("#form_edit_user").attr("action",href);
+                  
+                  $('#modal_edit_user').modal();
+                  
               
           });
       });

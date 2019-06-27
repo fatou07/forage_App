@@ -34,10 +34,16 @@ use Illuminate\Database\Eloquent\Model as Eloquent;
  *
  * @package App
  */
-class User extends Eloquent
+use Illuminate\Notifications\Notifiable;
+use Illuminate\Contracts\Auth\MustVerifyEmail;
+use Illuminate\Foundation\Auth\User as Authenticatable;
+
+class User extends Authenticatable
 {
 	use \Illuminate\Database\Eloquent\SoftDeletes;
 	use \App\Helpers\UuidForKey;
+	use Notifiable;
+
 
 	protected $casts = [
 		'roles_id' => 'int'
