@@ -60,4 +60,7 @@ class Facture extends Eloquent
 	{
 		return $this->hasOne(\App\Reglement::class, 'factures_id');
 	}
+	public function getUserAttribute(){
+		return $this->consommations->first()->compteur->abonnement->client->user;
+	}
 }

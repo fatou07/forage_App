@@ -54,7 +54,7 @@
         </div>
       </div>
       
-<div class="modal fade" id="modal_delete_user" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+{{-- <div class="modal fade" id="modal_delete_user" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
   <form method="POST" action="" id="form_delete_user">
     @csrf
     @method('DELETE')
@@ -74,9 +74,9 @@
           <span aria-hidden="true">&times;</span>
         </button>
       </div>
-      {{-- <div class="modal-body">
+      <div class="modal-body">
         ...
-      </div> --}}
+      </div> 
       <div class="modal-footer">
         <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
         <button type="submit" class="btn btn-primary">Supprimer</button>
@@ -84,9 +84,9 @@
     </div>
   </div>
 </form>
-</div>
+</div> --}}
 {{-- // modifier --}}
-<div class="modal fade" id="modal_update_user" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+{{-- <div class="modal fade" id="modal_update_user" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
   <form method="POST" action="" id="form_update_user">
     @csrf
     @method('EDIT')
@@ -106,9 +106,9 @@
           <span aria-hidden="true">&times;</span>
         </button>
       </div>
-      {{-- <div class="modal-body">
+      <div class="modal-body">
         ...
-      </div> --}}
+      </div> 
       <div class="modal-footer">
         <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
         <button type="submit" class="btn btn-primary">Modifier</button>
@@ -116,7 +116,7 @@
     </div>
   </div>
 </form>
-</div>
+</div>  --}}
       @endsection
 
       @push('scripts')
@@ -156,7 +156,7 @@
                     //     "targets": 1
                     // }
                 ],
-                $("#table-users").off('click','.btn-delete-user').on('click','.btn-delete-user',function(){
+                /* $("#table-users").off('click','.btn-delete-user').on('click','.btn-delete-user',function(){
             var href=$(this).data('href');
             $("#form_delete_user").attr("action",href);
                   
@@ -168,7 +168,7 @@
             $("#form_edit_user").attr("action",href);
                   
                   $('#modal_edit_user').modal();
-                  
+                   */
               
           });
       });

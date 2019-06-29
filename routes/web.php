@@ -59,8 +59,9 @@ Route::resource('villages', 'VillageController');
 
 Route::get('/factures/list', 'FactureController@list')->name('factures.list');
 Route::resource('factures', 'FactureController');
-Route::get('/factures/create', 'FactureController@create')->name('factures.create');
-Route::resource('factures', 'FactureController');
+Route::resource('reglements', 'ReglementController')->except('create');
+Route::get('/reglements/create/{factures}', 'ReglementController@create')->name('reglements.create');
+/* Route::resource('factures', 'FactureController'); */
 
 Route::get('/reglements/list', 'ReglementController@list')->name('reglements.list');
 Route::resource('reglements', 'ReglementController');

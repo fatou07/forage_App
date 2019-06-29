@@ -10,7 +10,7 @@
                 <div class="card-header card-header-primary">
                   <h4 class="card-title ">SENFORAGE</h4>
                   <p class="card-category"> Factures
-                      <a href="{{route('factures.create')}}"><div class="btn btn-warning">Nouvelle Facture <i class="material-icons">add</i></div></a> 
+                      {{-- <a href="{{route('factures.create')}}"><div class="btn btn-warning">Nouvelle Facture <i class="material-icons">add</i></div></a>  --}}
                   </p>
                 </div>
                 <div class="card-body">
@@ -80,10 +80,10 @@
                         {
                         "data": null,
                         "render": function (data, type, row) {
-                        url_e =  "{!! route('factures.edit',':id')!!}".replace(':id', data.id);
-                        url_d =  "{!! route('factures.destroy',':id')!!}".replace(':id', data.id);
-                        return '<a href='+url_e+'  class=" btn btn-primary " ><i class="material-icons">edit</i></a>'+
-                        '<a class="btn btn-danger" href='+url_d+'><i class="material-icons">delete</i></a>';
+                        url_e =  "{!! route('factures.show',':id')!!}".replace(':id', data.id);
+                        url_d =  "{!! route('reglements.create',':id')!!}".replace(':id', data.id);
+                        return '<a href='+url_e+'  class=" btn btn-primary " >&nbsp;Afficher</a>'+
+                        '<a class="btn btn-danger" href='+url_d+'>&nbsp;effectuer le reglement</a>';
                         },
                         "targets": 6
                         },

@@ -28,9 +28,9 @@ class FactureController extends Controller
      *
      * @return \Illuminate\Http\Response
      */
-    public function create()
+    public function create(Facture $facture)
     {
-        return view('factures.create');
+        return $facture;
     }
 
     /**
@@ -52,7 +52,7 @@ class FactureController extends Controller
      */
     public function show(Facture $facture)
     {
-        //
+    return view('factures.show');
     }
 
     /**

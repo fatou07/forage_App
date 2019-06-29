@@ -10,7 +10,7 @@ class ReglementController extends Controller
 {
     public function list(Request $request)
     {
-        $reglement=Reglement::get()->load('type','comptable');
+        $reglement=Reglement::get();
         return Datatables::of($reglement)->make(true);
     }
     /**
