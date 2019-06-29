@@ -32,6 +32,7 @@
         <a href="#" class="simple-text logo-normal">
           SEN FORAGE
         </a>
+       
       </div>
       @include('layout.sidebar_wrapper')
     </div>
@@ -111,6 +112,9 @@
               </div>
             </div>
           </div> --}}
+          {{-- <p>
+              SEN forage est une entreprise de distribution d'eau des Habitants nord du Senegal.Dont ses seuls objectifs est de lutter contre le Manque d'eau dans les villages concernés.
+            </p> --}}
           <div class="row">
             <div class="col-md-4">
               <div class="card card-chart">
@@ -124,7 +128,7 @@
                 </div>
                 <div class="card-footer">
                   <div class="stats">
-                    <i class="material-icons">access_time</i> updated 4 minutes ago
+                    <i class="material-icons">access_time</i> mise a jour, il y'a 4 minutes
                   </div>
                 </div>
               </div>
@@ -135,7 +139,7 @@
                   <div class="ct-chart" id="websiteViewsChart"></div>
                 </div>
                 <div class="card-body">
-                  <h4 class="card-title">Clients</h4>
+                  <h4 class="card-title">Abonnements</h4>
                   <p class="card-category">Last Campaign Performance</p>
                 </div>
                 <div class="card-footer">
@@ -161,9 +165,13 @@
                 </div>
               </div>
             </div>
+            
+              
           </div>
+          
           <div class="row">
-            <div class="col-lg-6 col-md-12">
+            
+           {{--  <div class="col-lg-6 col-md-12">
               <div class="card">
                 <div class="card-header card-header-tabs card-header-primary">
                   <div class="nav-tabs-navigation">
@@ -409,7 +417,7 @@
                   </div>
                 </div>
               </div>
-            </div>
+            </div> --}}
             <div class="col-lg-6 col-md-12">
               <div class="card">
                 <div class="card-header card-header-warning">
@@ -420,34 +428,34 @@
                   <table class="table table-hover">
                     <thead class="text-warning">
                       <th>ID</th>
-                      <th>Name</th>
-                      <th>Salary</th>
-                      <th>Country</th>
+                      <th>Nom</th>
+                      <th>Consommation en litre</th>
+                      <th>Villages</th>
                     </thead>
                     <tbody>
                       <tr>
                         <td>1</td>
                         <td>fatou ndoye</td>
-                        <td>$36,738</td>
-                        <td>Niger</td>
+                        <td>53.30</td>
+                        <td>Fouta</td>
                       </tr>
                       <tr>
                         <td>2</td>
-                        <td>Minerva Hooper</td>
-                        <td>$23,789</td>
-                        <td>Curaçao</td>
+                        <td>Moustapha diabang</td>
+                        <td>23,789 </td>
+                        <td>diolof</td>
                       </tr>
                       <tr>
                         <td>3</td>
-                        <td>Sage Rodriguez</td>
-                        <td>$56,142</td>
-                        <td>Netherlands</td>
+                        <td>Guedado dieng</td>
+                        <td>56,142</td>
+                        <td>Gueune sarr</td>
                       </tr>
                       <tr>
                         <td>4</td>
-                        <td>Philip Chaney</td>
-                        <td>$38,735</td>
-                        <td>Korea, South</td>
+                        <td>Momar fall</td>
+                        <td>38,735</td>
+                        <td>sindia</td>
                       </tr>
                     </tbody>
                   </table>

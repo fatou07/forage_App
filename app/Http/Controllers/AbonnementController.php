@@ -4,7 +4,8 @@ namespace App\Http\Controllers;
 
 use App\Abonnement;
 use Illuminate\Http\Request;
-use DataTables;
+/* use DataTables; */
+use Yajra\Datatables\Datatables;
 
 class AbonnementController extends Controller
 {
@@ -52,6 +53,7 @@ class AbonnementController extends Controller
         $compteur = \App\Compteur::find($request->input('compteur'));
 
         return view('abonnements.create', compact(['client', 'compteur']));
+      
     }
 
     /**

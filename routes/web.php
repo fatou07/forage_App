@@ -21,6 +21,9 @@ Route::get('/accueil', function () {
 Route::get('/', function () {
     return view('layout.default');
 });
+Route::get('/contacts', function () {
+    return view('contacts.index');
+});
 
 Route::get('/login', function () {
     return view('auth.passwords.login');
@@ -32,6 +35,14 @@ Auth::routes();
 Route::get('/clients/selectvillage', function () {
 
 return view('clients.selectvillage');})->name('clients.selectvillage');
+
+Route::get('/abonnements/selectclient', function () {
+
+    return view('abonnements.selectclient');})->name('abonnements.selectclient');
+
+    Route::get('/abonnements/selectcompteur', function () {
+
+        return view('abonnements.selectcompteur');})->name('abonnements.selectcompteur');
 
 Route::get('/home', 'HomeController@index')->name('home');
 
@@ -56,27 +67,29 @@ Route::resource('reglements', 'ReglementController');
 Route::get('/reglements/create', 'ReglementController@create')->name('reglements.create');
 Route::resource('reglements', 'ReglementController');
 
-Route::get('/abonnements/list', 'AbonnementController@index')->name('abonnements.list');
+
+/* Route::get('/abonnements/selectclient', function () {
+
+    return view('abonnements.selectclient');})->name('abonnements.selectclient');
+ Route::get('/abonnements/selectcompteur', function () {
+
+ return view('abonnements.selectcompteur');})->name('abonnements.selectcompteur'); */
+
+Route::get('/abonnements/list', 'AbonnementController@list')->name('abonnements.list');
 Route::resource('abonnements', 'AbonnementController');
 Route::get('/abonnements/create', 'AbonnementController@create')->name('abonnements.create');
 Route::resource('abonnements', 'AbonnementController');
 Route::get('/abonnements/show', 'AbonnementController@show')->name('abonnements.show');
 Route::resource('abonnements', 'AbonnementController');
-Route::get('/abonnements/selectclient', function () {
 
-    return view('abonnements.selectclient');})->name('abonnements.selectclient');
-    Route::get('/abonnements/selectcompteur', function () {
-
-        return view('abonnements.selectcompteur');})->name('abonnements.selectcompteur');
     
-    
-
 Route::get('/users/list', 'UserController@list')->name('users.list');
 Route::resource('users', 'UserController');
 Route::get('/users/create', 'UserController@create')->name('users.create');
 Route::resource('users', 'UserController');
 
 Route::get('/consommations/list/{abonnements}', 'ConsommationController@list')->name('consommations.list');
+Route::get('/consommations/list', 'ConsommationController@list')->name('consommations.list');
 Route::resource('consommations', 'ConsommationController');
 Route::get('/consommations/create', 'ConsommationController@create')->name('consommations.create');
 Route::resource('consommations', 'ConsommationController');
@@ -95,7 +108,9 @@ Route::resource('agents', 'AgentController');
 Route::get('/gestionnaires/list', 'GestionnaireController@list')->name('gestionnaires.list');
 Route::resource('gestionnaires', 'GestionnaireController');
 
+Route::get('/compteurs/listfree', 'CompteurController@listfree')->name('compteurs.listfree');
 Route::get('/compteurs/list', 'CompteurController@list')->name('compteurs.list');
+Route::get('/compteurs/create', 'CompteurController@create')->name('compteurs.create');
 Route::resource('compteurs', 'CompteurController');
 
 Route::get('/arrondissements/list', 'ArrondissementController@list')->name('arrondissements.list');

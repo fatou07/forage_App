@@ -8,14 +8,14 @@
             <div class="col-md-12">
               <div class="card">
                 <div class="card-header card-header-primary">
-                  <h4 class="card-title ">SENFORAGE</h4>
+                  <h4 class="card-title ">SEN FORAGE</h4>
                   <p class="card-category"> Selection du compteur pour le client
-                      {{-- <a href="{{route('abonnements.selectclient')}}"><div class="btn btn-warning">Selection du Client <i class="material-icons">add</i></div></a>  --}}
+                      <a href="{{route('abonnements.selectclient')}}"><div class="btn btn-warning">Selection du Client <i class="material-icons">add</i></div></a>  
                   </p>
                 </div>
                 <div class="card-body">
                   <div class="table-responsive">
-                    <table class="table" id="table-clients">
+                    <table class="table" id="table-compteurs">
                       <thead class=" text-primary">
                         <th>
                           ID
@@ -54,10 +54,10 @@
       @push('scripts')
       <script type="text/javascript">
       $(document).ready(function () {
-          $('#table-clients').DataTable( { 
+          $('#table-compteurs').DataTable( { 
             "processing": true,
             "serverSide": true,
-            "ajax": "{{route('compteurs.listfree')}}",
+            "ajax": "{{route('compteurs.list')}}",
             columns: [
                     { data: 'id', name: 'id' },
                     { data: 'uuid', name: 'uuid' },
@@ -70,8 +70,12 @@
                         {
                         "data": null,
                         "render": function (data, type, row) {
-                        url_e =  "{!! route('abonnements.create',['compteur'=>'id-cptr','client'=>'idc'])!!}".replace('id-cptr', data.id).replace('idc',{{$client->id}});
-                        return '<a href='+url_e+'  class=" btn btn-primary " ><i class="material-icons">edit</i></a>';                        },
+                        url_e =  "{!! route('abonnements.create',['compteur'=>'id-cptr','client'=>'idc'])!!}".replace('id-cptr', data.id).replace('idc',{{'$client->id'}});
+                        return '<a href='+url_e+'  class=" btn btn-primary " ><i class="material-icons">edit</i></a>';
+                        
+                        /* url_e =  "{!! route('abonnements.selectcompteur','client=:id')!!}".replace(':id', data.id);
+                        return '<a href='+url_e+'  class=" btn btn-primary " ><i class="material-icons">edit</i></a>'; */
+                                                },
                         "targets": 4
                         },
                     // {

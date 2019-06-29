@@ -14,10 +14,10 @@ class HomeController extends Controller
     public function __construct()
     {
         $this->middleware('auth');
-        // $this->middleware('roles:Administrateur');
-        // $this->middleware('roles:Gestionnaire');
-        // $this->middleware('roles:Agent');
-
+        /* $this->middleware('roles:Administrateur|Gestionnaire|Comptable');
+        $this->middleware('roles:Gestionnaire');
+        $this->middleware('roles:Agent');
+ */
     }
 
     /**

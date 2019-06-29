@@ -5,8 +5,16 @@ namespace App\Http\Controllers;
 use App\Type;
 use Illuminate\Http\Request;
 
+use Yajra\Datatables\Datatables;
+
+
 class TypeController extends Controller
 {
+    public function list(Request $request)
+    {
+        $types=Type::get();
+        return Datatables::of($types)->make(true);
+    }
     /**
      * Display a listing of the resource.
      *
@@ -14,7 +22,7 @@ class TypeController extends Controller
      */
     public function index()
     {
-        //
+        return view('types.index');
     }
 
     /**
@@ -24,7 +32,7 @@ class TypeController extends Controller
      */
     public function create()
     {
-        //
+        return view('types.create');
     }
 
     /**

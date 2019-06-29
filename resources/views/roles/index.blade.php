@@ -8,10 +8,10 @@
             <div class="col-md-12">
               <div class="card">
                 <div class="card-header card-header-primary">
-                  <h4 class="card-title ">SEN FORAGE</h4>
+                  <h4 class="card-title ">SEN FORAGE une entreprise de distribution d'eau</h4>
                   <p class="card-category"> Roles de SEN FORAGE
-                      <a href="{{route('roles.create')}}"><div class="btn btn-warning">Nouveau Role <i class="material-icons">add</i></div></a> 
-                  </p>
+                      <a href="{{route('roles.create')}}"><div class="btn btn-warning">AJOUT DE Roles <i class="material-icons">add</i></div></a> 
+                  </p> 
                 </div>
                 <div class="card-body">
                   <div class="table-responsive">

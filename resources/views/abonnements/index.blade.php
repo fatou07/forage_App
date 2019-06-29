@@ -8,7 +8,7 @@
             <div class="col-md-12">
               <div class="card">
                 <div class="card-header card-header-primary">
-                  <h4 class="card-title ">SENFORAGE</h4>
+                  <h4 class="card-title ">SEN FORAGE</h4>
                   <p class="card-category"> Abonnements
                       <a href="{{route('abonnements.selectclient')}}"><div class="btn btn-warning">Nouvel Abonnement <i class="material-icons">add</i></div></a> 
                   </p>
@@ -99,9 +99,10 @@
             columns: [
                     { data: 'id', name: 'id' },
                     { data: 'created_at', name: 'created_at' },
+                    
                     { data: 'client.user.name', name: 'client.user.name' },
                     { data: 'client.user.firstname', name: 'client.user.firstname' },
-                    { data: 'compteur.numero_serie', name: 'compteur.numero_serie' },
+                    { data: 'compteur.numero_serie', name: 'compteur.numero_serie' }, 
                     { data: null ,orderable: false, searchable: false}
 
                 ],

@@ -45,9 +45,9 @@ class Compteur extends Eloquent
 		return $this->belongsTo(\App\Administrateur::class, 'administrateurs_id');
 	}
 
-	public function abonnements()
+	public function abonnement()
 	{
-		return $this->hasMany(\App\Abonnement::class, 'compteurs_id');
+		return $this->hasOne(\App\Abonnement::class, 'compteurs_id');
 	}
 
 	public function consommations()
@@ -72,7 +72,7 @@ class Compteur extends Eloquent
 			$facture->valeur_totale_consommee=$valeur;
 			$facture->montant = $valeur*3;
 			$facture->save();
-			$facture->consommations->saveMany($nouvelles_conso);
+			$facture->consommations()->saveMany($nouvelles_conso);
 			return $facture;
 		}
 	return null;	

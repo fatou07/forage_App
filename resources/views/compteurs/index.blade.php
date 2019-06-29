@@ -21,11 +21,14 @@
                           ID
                         </th>
                         <th>
-                         Numero Serie
+                            uuid
+                                </th>
+                        <th>
+                         NSerie
                         </th>
                         <th>
-                    Administrateurs
-                        </th>
+                            date de creation
+                           </th>
                         
                         <th>
                           Action
@@ -58,8 +61,9 @@
             "ajax": "{{route('compteurs.list')}}",
             columns: [
                     { data: 'id', name: 'id' },
+                    { data: 'uuid', name: 'uuid' },
                     { data: 'numero_serie', name: 'numero_serie' },
-                    { data: 'administrateurs_id', name: 'administrateurs_id' },
+                    { data: 'created_at', name: 'created_at' },
                   
                     { data: null ,orderable: false, searchable: false}
 
@@ -73,7 +77,7 @@
                         return '<a href='+url_e+'  class=" btn btn-primary " ><i class="material-icons">edit</i></a>'+
                         '<a class="btn btn-danger" href='+url_d+'><i class="material-icons">delete</i></a>';
                         },
-                        "targets": 3
+                        "targets": 4
                         },
                     // {
                     //     "data": null,

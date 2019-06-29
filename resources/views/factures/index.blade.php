@@ -23,9 +23,7 @@
                         <th>
                           date limite
                         </th>
-                        <th>
-                            details
-                        </th>
+                       
                         <th>
                           Montant
                         </th>
@@ -35,6 +33,9 @@
                           <th>
                          fin Cons
                             </th>
+                            <th>
+                                reglement_type
+                                   </th>
                             <th>
                                 Action
                                    </th>
@@ -67,10 +68,11 @@
             columns: [
                     { data: 'id', name: 'id' },
                     { data: 'date_limite', name: 'date_limite' },
-                    { data: 'details', name: 'details' },
+                   /*  { data: 'details', name: 'details' }, */
                     { data: 'montant', name: 'montant' },
                     { data: 'debut_consommation', name: 'debut_consommation' },
                     { data: 'fin_consommation', name: 'fin_consommation' },
+                    { data: 'reglement.type.name', name: 'reglement.type.name' },
                     { data: null ,orderable: false, searchable: false}
 
                 ],

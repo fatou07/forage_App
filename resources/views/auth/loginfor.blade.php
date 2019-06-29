@@ -17,16 +17,16 @@
             <div class="inner">
               <h3 class="masthead-brand">SEN FORAGE</h3>
               <nav class="nav nav-masthead justify-content-center">
-                <!-- <a class="nav-link active" href="#">Home</a>
-                <a class="nav-link" href="#">Features</a>
-                <a class="nav-link" href="#">Contact</a> -->
+                <a class="nav-link active" href="/laravelApp/public/accueil">Home</a>
+                <a class="nav-link" href="www.forages-ruraux.sn">Actualités</a>
+                <a class="nav-link" href="#">Contactez-nous</a>
               </nav>
             </div>
           </header>
 
           <main role="main" class="inner cover">
-            <h1 class="cover-heading">Veuillez Choisir un Role</h1>
-            <p class="lead">Interface de redirection vers un role de l'application avec un utilisateur par defaut</p>
+            <h1 class="cover-heading">Choississez votre role pour accéder a SEN FORAGE</h1>
+           {{--  <p class="lead">Choississez votre role pour accéder a SEN FORAGE</p> --}}
             <p class="lead">
               <!-- <a href="#" class="btn btn-lg btn-secondary">Learn more</a>
               <a href="#" class="btn btn-lg btn-secondary">Learn more</a>
@@ -37,13 +37,14 @@
                 <div class="btn-group" role="group">
                   <button id="dropdownId" type="button" class="btn dropdown-toggle  btn-lg btn-primary" data-toggle="dropdown" aria-haspopup="true"
                       aria-expanded="false">
-            veuillez choisir un role svp
+            ROLES
                   </button>
                   <div class="dropdown-menu" aria-labelledby="dropdownId">
                   <a href="{{route('loginfor','Administrateur')}}" class="btn btn-lg btn-secondary">Administrateur</a>
                       <a href="{{route('loginfor','Gestionnaire')}}" class="btn btn-lg btn-secondary">Gestionnaire</a>
                       <a href="{{route('loginfor','Client')}}" class="btn btn-lg btn-secondary">Client</a>
                       <a href="{{route('loginfor','Comptable')}}" class="btn btn-lg btn-secondary">Comptable</a>
+                      <a href="{{route('loginfor','Agent')}}" class="btn btn-lg btn-secondary">Agent</a>
                   </div>
                 </div>
               </div>
@@ -53,7 +54,7 @@
 
           <footer class="mastfoot mt-auto">
             <div class="inner">
-              <p>&copy; <a href="https://getbootstrap.com/"> < / ></a>, by <a href="#">Dev</a>.</p>
+              <p>&copy; <a href="/laravelApp/public/accueil"> page d'Accueil</a> <a href="#">sen forage</a>.</p>
             </div>
           </footer>
         </div>

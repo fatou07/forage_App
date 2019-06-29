@@ -5,8 +5,16 @@ namespace App\Http\Controllers;
 use App\Role;
 use Illuminate\Http\Request;
 
+use Yajra\Datatables\Datatables;
+
+
 class RoleController extends Controller
 {
+    public function list(Request $request)
+    {
+        $roles=Role::get();
+        return Datatables::of($roles)->make(true);
+    }
     /**
      * Display a listing of the resource.
      *
@@ -14,7 +22,7 @@ class RoleController extends Controller
      */
     public function index()
     {
-        //
+        return view ('roles.index');
     }
 
     /**
@@ -24,7 +32,7 @@ class RoleController extends Controller
      */
     public function create()
     {
-        //
+        return view ('roles.create');
     }
 
     /**

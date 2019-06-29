@@ -6,7 +6,13 @@
         <p>Accueil</p>
       </a>
     </li>
-     @roles('Gestionnaire|Administrateur')
+     @roles('Gestionnaire|Client')
+     <li class="nav-item ">
+        <a class="nav-link" href="{{route('abonnements.index')}}">
+          <i class="material-icons"></i>
+          <p>Abonnements</p>
+        </a>
+      </li>
     <li class="nav-item ">
     <a class="nav-link" href="{{route('villages.index')}}">
         <i class="material-icons"></i>
@@ -19,12 +25,7 @@
         <p>Clients</p>
       </a>
     </li>
-    <li class="nav-item ">
-      <a class="nav-link" href="{{route('administrateurs.index')}}">
-        <i class="material-icons"></i>
-        <p>Administrateurs</p>
-      </a>
-    </li>
+    
     <li class="nav-item ">
       <a class="nav-link" href="{{route('compteurs.index')}}">
         <i class="material-icons"></i>
@@ -32,13 +33,20 @@
       </a>
     </li>
    @endroles
-   @roles('Administrateur|Agent')
+   @roles('Administrateur|Comptable')
+   <li class="nav-item ">
+      <a class="nav-link" href="{{route('administrateurs.index')}}">
+        <i class="material-icons"></i>
+        <p>Administrateurs</p>
+      </a>
+    </li>
     <li class="nav-item ">
       <a class="nav-link" href="{{route('comptables.index')}}">
         <i class="material-icons"></i>
         <p>Comptables</p>
       </a>
     </li>
+    
     <li class="nav-item ">
       <a class="nav-link" href="{{route('agents.index')}}">
         <i class="material-icons"></i>
@@ -52,13 +60,8 @@
       </a>
     </li>
     @endroles
-    @roles('Agents')
-    <li class="nav-item ">
-      <a class="nav-link" href="{{route('abonnements.index')}}">
-        <i class="material-icons"></i>
-        <p>Abonnements</p>
-      </a>
-    </li>
+    @roles('Agent')
+   
     
     <li class="nav-item ">
       <a class="nav-link"  href="{{route('factures.index')}}">
@@ -85,7 +88,7 @@
       </a>
     </li>
    @endroles 
-    <li class="nav-item ">
+    {{-- <li class="nav-item ">
       <a class="nav-link"href="{{route('arrondissements.index')}}">
         <i class="material-icons"></i>
         <p>Arrondissements</p>
@@ -109,7 +112,7 @@
         <i class="material-icons"></i>
         <p>Roles de SEN FORAGE</p>
       </a>
-    </li>
+    </li> --}}
    {{--  <li class="nav-item active-pro ">
       <a class="nav-link" href="./upgrade.html">
         <i class="material-icons"></i>

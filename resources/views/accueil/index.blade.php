@@ -28,7 +28,7 @@
       <a class="navbar-brand" href="{{ route('loginfor')}}" rel="tooltip" title="Appuyer ici pour consulter SEN FORAGE" data-placement="bottom">
         <button id="dropdownId" type="button" class="btn dropdown-toggle  btn-lg btn-primary" {{-- data-toggle="dropdown" aria-haspopup="true" --}}
                       {{-- aria-expanded="false" --}}>
-          SEN FORAGE
+         se connecter à SEN FORAGE
       </button>
         </a>
         <button class="navbar-toggler navbar-toggler" type="button" data-toggle="collapse" data-target="#navigation" aria-controls="navigation-index" aria-expanded="false" aria-label="Toggle navigation">
@@ -98,13 +98,13 @@
           <h1 class="h1-seo">Bienvenue à SEN FORAGE</h1>
           <h3>UNE ENTREPRISE DE DISTRIBUTION D'EAU DES HABITANTS NORD DU SENEGAL </h3>
         </div>
-        <h6 class="category category-absolute">
+        {{-- <h6 class="category category-absolute">
           <a href="http://invisionapp.com/" target="_blank">
             <img src="{{asset('assets/img/invision-white-slim.png')}}" class="invision-logo" />
           </a>
           <a href="https://www.creative-tim.com" target="_blank">
             <img src="{{asset('assets/img/creative-tim-white-slim2.png')}}" class="creative-tim-logo" />
-          </a>.</h6>
+          </a>.</h6> --}}
       </div>
     </div>
    {{--  <div class="main">
@@ -1293,7 +1293,7 @@
         <nav>
           <ul>
             <li>
-            <a href="{{route('')}}">
+            <a href="/laravelApp/public/clients/create">
                 s'abonner a SEN FORAGE
               </a>
             </li>

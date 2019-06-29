@@ -10,7 +10,7 @@ class FactureController extends Controller
 {
     public function list(Request $request)
     {
-        $factures=Facture::get();
+        $factures=Facture::with('reglement.type')->get();
         return Datatables::of($factures)->make(true);
     }
     /**

@@ -21,19 +21,22 @@
                           ID
                         </th>
                         <th>
-                          Nom
+                          Date
                         </th>
                         <th>
-                            Prenom
+                            valeur
+                          </th>
+                        <th>
+                          Compteur
                         </th>
                         <th>
-                          Email
+                         nom client
                         </th>
                         <th>
-                            date de consommation
+                           prenom client
                           </th>
                           <th>
-                            Montant Consommer
+                           Agent
                           </th>
                         <th>
                           Action
@@ -66,11 +69,12 @@
             "ajax": "{{route('consommations.list')}}",
             columns: [
                     { data: 'id', name: 'id' },
-                    { data: 'user.name', name: 'user.name' },
-                    { data: 'user.firstname', name: 'user.firstname' },
-                    { data: 'user.email', name: 'user.email' },
-                    { data: 'user.consommation', name: 'user.consommation' },
-                    { data: 'user.date_consommation', name: 'user.date_consommation' },
+                    { data: 'date', name: 'date' },
+                    { data: 'valeur', name: 'valeur' },
+                    { data: 'compteurs_id', name: 'compteurs_id' },
+                    { data: 'compteur.abonnement.client.user.name', name: 'compteur.abonnement.client.user.name' },
+                    { data: 'compteur.abonnement.client.user.firstname', name: 'compteur.abonnement.client.user.firstname' },
+                    { data: 'agent.matricule', name: 'agent.matricule' },
                     { data: null ,orderable: false, searchable: false}
 
                 ],
@@ -83,7 +87,7 @@
                         return '<a href='+url_e+'  class=" btn btn-primary " ><i class="material-icons">edit</i></a>'+
                         '<a class="btn btn-danger" href='+url_d+'><i class="material-icons">delete</i></a>';
                         },
-                        "targets": 4
+                        "targets": 7
                         },
                     // {
                     //     "data": null,

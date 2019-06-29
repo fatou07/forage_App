@@ -2,26 +2,11 @@
 
 namespace App\Http\Controllers;
 
-use App\Consommation;
-use App\Abonnement;
+use App\Contact;
 use Illuminate\Http\Request;
-use Yajra\Datatables\Datatables;
 
-
-class ConsommationController extends Controller
+class ContactController extends Controller
 {
-    public function list(Abonnement $abonnement=null)
-    {
-       if ( $abonnement==null){
-           $consommations=\App\Consommation::with('agent','compteur.abonnement.client.user')->get();
-       
-        return Datatables::of($consommations)->make(true);
-    }else{
-    
-    $consommations=$abonnement->compteur->consommations->load('agent','compteur.abonnement.client.user');
-    return Datatables::of($consommations)->make(true);
-     }
-    }
     /**
      * Display a listing of the resource.
      *
@@ -29,8 +14,7 @@ class ConsommationController extends Controller
      */
     public function index()
     {
-        $consommations=Consommation::get()->paginate(10);
-        return view('consommations.index',compact('consommations'));
+        //
     }
 
     /**
@@ -57,10 +41,10 @@ class ConsommationController extends Controller
     /**
      * Display the specified resource.
      *
-     * @param  \App\Consommation  $consommation
+     * @param  \App\Contact  $contact
      * @return \Illuminate\Http\Response
      */
-    public function show(Consommation $consommation)
+    public function show(Contact $contact)
     {
         //
     }
@@ -68,10 +52,10 @@ class ConsommationController extends Controller
     /**
      * Show the form for editing the specified resource.
      *
-     * @param  \App\Consommation  $consommation
+     * @param  \App\Contact  $contact
      * @return \Illuminate\Http\Response
      */
-    public function edit(Consommation $consommation)
+    public function edit(Contact $contact)
     {
         //
     }
@@ -80,10 +64,10 @@ class ConsommationController extends Controller
      * Update the specified resource in storage.
      *
      * @param  \Illuminate\Http\Request  $request
-     * @param  \App\Consommation  $consommation
+     * @param  \App\Contact  $contact
      * @return \Illuminate\Http\Response
      */
-    public function update(Request $request, Consommation $consommation)
+    public function update(Request $request, Contact $contact)
     {
         //
     }
@@ -91,11 +75,18 @@ class ConsommationController extends Controller
     /**
      * Remove the specified resource from storage.
      *
-     * @param  \App\Consommation  $consommation
+     * @param  \App\Contact  $contact
      * @return \Illuminate\Http\Response
      */
-    public function destroy(Consommation $consommation)
-    {
-        //
-    }
+   /*  public function destroy(Contact $contact)
+    { */
+        public function destroy(
+            ContactRepository $contact_gestion, 
+            $id)
+        {
+            $contact_gestion->destroy($id);
+             
+            return redirect('contact');
+        }
+    /* } */
 }
